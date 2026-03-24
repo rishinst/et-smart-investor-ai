@@ -4,6 +4,10 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+  pull-requests: read
+
 jobs:
   dco:
     name: Developer Certificate of Origin
@@ -14,12 +18,27 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: DCO Check
-        uses: amannn/action-semantic-pull-request@v5
+      - name: Check DCO Signed-off-by on all commits
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          echo "Checking commits from $BASE_SHA to $HEAD_SHA for DCO sign-off..."
+          MISSING=""
+          for commit in $(git log --format="%H" "$BASE_SHA".."$HEAD_SHA"); do
+            message=$(git log -1 --format="%B" "$commit")
+            if ! echo "$message" | grep -qiE "^Signed-off-by: .+ <.+@.+>"; then
+              MISSING="$MISSING\n  - $commit: $(git log -1 --format='%s' $commit)"
+            fi
+          done
 
-      - name: Check DCO Signed-off-by
-        uses: purcell/check-dco@master
-        with:
-          repository: ${{ github.repository }}
+          if [ -n "$MISSING" ]; then
+            echo "❌ The following commits are missing 'Signed-off-by':"
+            echo -e "$MISSING"
+            echo ""
+            echo "Fix by amending commits with: git commit --amend --signoff"
+            echo "Or use: git rebase --signoff HEAD~<N>"
+            exit 1
+          else
+            echo "✅ All commits have a valid DCO Signed-off-by."
+          fi
