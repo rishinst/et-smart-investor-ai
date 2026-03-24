@@ -1,0 +1,47 @@
+reviews:
+  # CodeRabbit auto-review settings
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - main
+
+  # Review focus areas
+  profile: chill  # Options: chill, assertive
+
+  # Language hints
+  language: "en-US"
+
+  # Path-specific instructions for reviewers
+  path_instructions:
+    - path: "frontend/src/**"
+      instructions: |
+        This is a React + Vite + TailwindCSS frontend.
+        - Check for proper use of React hooks (no rules-of-hooks violations).
+        - Ensure components are functional and not class-based.
+        - Check TailwindCSS class usage is consistent.
+        - Flag any hardcoded API URLs (should use env variables).
+
+    - path: "backend/**"
+      instructions: |
+        This is a Node.js/Express backend.
+        - Ensure all routes have proper error handling.
+        - No secrets or API keys should be hardcoded.
+        - Check that response structures are consistent JSON.
+
+    - path: "data/**"
+      instructions: |
+        This is mock data for the MVP.
+        - Ensure JSON structure matches the Signal schema defined in the codebase.
+        - All signal objects must have: id, company, ticker, signalType, severity, headline, insight, source, date.
+
+    - path: ".github/workflows/**"
+      instructions: |
+        Review GitHub Actions workflows.
+        - Ensure actions are pinned to specific SHA or major versions (e.g., @v4).
+        - No secrets should be logged or exposed.
+        - Ensure jobs have proper `name` fields.
+
+chat:
+  # Enable CodeRabbit chat responses on PRs
+  auto_reply: true

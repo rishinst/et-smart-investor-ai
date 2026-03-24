@@ -1,0 +1,25 @@
+name: DCO Check
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  dco:
+    name: Developer Certificate of Origin
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: DCO Check
+        uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check DCO Signed-off-by
+        uses: purcell/check-dco@master
+        with:
+          repository: ${{ github.repository }}
