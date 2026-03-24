@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "company": "Tata Motors Ltd",
+    "ticker": "TATAMOTORS",
+    "signalType": "Management Commentary Shift",
+    "severity": "high",
+    "headline": "CFO pivots language from 'global expansion' to 'domestic cost discipline'",
+    "insight": "In the last 3 consecutive earnings calls, Tata Motors CFO has quietly shifted rhetoric. A reduction in international capex language combined with domestic cost-cutting hints at sub-par JLR performance ahead. Historically this type of commentary shift precedes a guidance cut by ~2 quarters.",
+    "source": "Q3 FY26 Earnings Call Transcript",
+    "date": "2026-03-20"
+  },
+  {
+    "id": 2,
+    "company": "Infosys Ltd",
+    "ticker": "INFY",
+    "signalType": "Insider Trade",
+    "severity": "high",
+    "headline": "Co-founder sells ₹420 Cr stake — first sale in 18 months",
+    "insight": "NRN Murthy's family office sold a significant block for the first time since 2024. Insiders rarely sell near bottoms. This is a potential signal of valuation concern at current levels. Cross-reference: deal size exceeds the previous peak insider exit of ₹310 Cr in Sept 2022, which preceded a 22% correction.",
+    "source": "BSE Insider Trading Disclosure",
+    "date": "2026-03-22"
+  },
+  {
+    "id": 3,
+    "company": "HDFC Bank Ltd",
+    "ticker": "HDFCBANK",
+    "signalType": "Bulk Deal",
+    "severity": "medium",
+    "headline": "Vanguard quietly accumulates 1.2% additional stake via block window",
+    "insight": "Vanguard EM Equity fund executed 4 separate block deals over 8 trading sessions — a pattern consistent with institutional accumulation before a re-rating event. HDFC Bank has historically seen 12–18% re-rating within 6 months of such accumulation phases.",
+    "source": "NSE Block Deal Data",
+    "date": "2026-03-21"
+  },
+  {
+    "id": 4,
+    "company": "Zomato Ltd",
+    "ticker": "ZOMATO",
+    "signalType": "Regulatory Change",
+    "severity": "high",
+    "headline": "DPIIT draft policy may mandate 20% discount cap for food aggregators",
+    "insight": "A recently circulated DPIIT draft (not yet mainstream news) proposes capping aggregator-funded discounts at 20%, directly threatening Zomato Gold unit economics. If enacted, gross margins could compress by 3–4%. The market has NOT priced this in yet.",
+    "source": "DPIIT Draft Discussion Paper (March 2026)",
+    "date": "2026-03-19"
+  },
+  {
+    "id": 5,
+    "company": "Adani Ports & SEZ",
+    "ticker": "ADANIPORTS",
+    "signalType": "Filing Alert",
+    "severity": "medium",
+    "headline": "Subsidiary incorporated in UAE — hints at Middle East expansion",
+    "insight": "A new wholly-owned subsidiary was incorporated in Abu Dhabi Global Market (ADGM) with the object clause referencing 'port logistics and multimodal freight.' This precedes every major Adani Ports international acquisition. Prior pattern: Dubai subsidiary (2021) → Haifa acquisition announcement (6 weeks later).",
+    "source": "MCA Filing Alert",
+    "date": "2026-03-18"
+  },
+  {
+    "id": 6,
+    "company": "Sun Pharma",
+    "ticker": "SUNPHARMA",
+    "signalType": "Bulk Deal",
+    "severity": "low",
+    "headline": "FII selling ₹210 Cr in 3 sessions post-FDA update",
+    "insight": "Post-USFDA inspection of Halol plant, 2 European FIIs exited. However, the selling is concentrated in the 10:00–10:15 AM window — a pattern common in programmatic rebalancing, not fundamental exit. This might be an overreaction entry opportunity.",
+    "source": "NSE Bulk Deal + USFDA Inspection Report",
+    "date": "2026-03-23"
+  }
+]
